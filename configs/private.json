@@ -1,0 +1,6 @@
+{
+    "profile_token": "Your profile token.",
+    "start_command": "!startlog",
+    "stop_command": "!stoplog",
+    "profile_id": "Your profile id."
+}
