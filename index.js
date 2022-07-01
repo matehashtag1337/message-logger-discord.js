@@ -23,21 +23,21 @@ client.on('messageCreate', async message => {
 	if(channelid[1] == logchannel[1]) return console.log("Please don't log the channel, where u want to send the logs.")
  	if(message.author.id == private_config.profile_id && message.content.startsWith(private_config.start_command) && isrunning == 1)
 	{
-		return console.log("Logolás már megy a(z) `" + channelid[1] + "` ID csatornában!")
+		return console.log("The program currently logging  `" + channelid[1] + "` channel!")
 	}
 	else if(message.author.id == private_config.profile_id && message.content.startsWith(private_config.start_command) && isrunning == 0)
 	{
 		isrunning = 1
-		return console.log("Logolás elkezdődött a(z) `" + channelid[1] + "` ID csatornában!")
+		return console.log("Started logging `" + channelid[1] + "` channel!")
 	}
 	else if(message.author.id == private_config.profile_id && message.content.startsWith(private_config.stop_command) && isrunning == 0)
 	{
-		return console.log("A logolás nem megy a(z) `" + channelid[1] + "` ID csatornában!")
+		return console.log("The program currently not logging `" + channelid[1] + "` channel!")
 	}
 	else if(message.author.id == private_config.profile_id && message.content.startsWith(private_config.stop_command) && isrunning == 1)
 	{
 		isrunning = 0
-		return console.log("Logolás befejeződött a(z) `" + channelid[1] + "` ID csatornában!")
+		return console.log("Stopped logging `" + channelid[1] + "` channel!")
 	}
 	if(isrunning == 1)
 	{
@@ -45,12 +45,12 @@ client.on('messageCreate', async message => {
 		{
 			if(logchannel[1] == "0")
 			{
-				console.log("Üzenetet küldött: " + message.author.tag + " | Tartalom: " + message.content)
+				console.log("Message sent by: " + message.author.tag + " | Message: " + message.content)
 			}
 			else
 			{
-				client.channels.cache.get(logchannel[1]).send("Üzenetet küldött: " + message.author.tag + " | Tartalom: " + message.content)
-				console.log("Üzenetet küldött: " + message.author.tag + " | Tartalom: " + message.content)
+				client.channels.cache.get(logchannel[1]).send("Message sent by: " + message.author.tag + " | Message: " + message.content)
+				console.log("Message sent by: " + message.author.tag + " | Message: " + message.content)
 			}
 		}
 	}
